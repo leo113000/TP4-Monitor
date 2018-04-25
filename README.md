@@ -25,13 +25,13 @@ La **estructura base de un proyecto Maven**, en el caso de que no hayamos utiliz
 - Carpeta de test
 - Archivos de Maven donde el más destacado es el POM.xml donde se configurara el proyecto, sobre todo las dependencias que este tendrá.
 
-## Spring
+# Spring
 - @Component: Anotación de propósito general para definir un componente manejado por Spring.
 - @Repository: Especialización de @Componente para indicar que la clase es un repositorio de persistencia.
 - @Service: Especialización de @Componente. Indica que será un servicio que manejará la lógica de negicio
 - @Controller: Especialización de @Componente. Indica que será una controladora, aquí se usará la anotación @RequestMapping para definir los Endpoints.
 
-## REST
+# REST
 - GET: Solicita una representación de un recurso específico.
 Las peticiones que usan el método GET sólo deben recuperar datos.
 - HEAD: Pide una respuesta idéntica a la de una petición GET, pero sin el cuerpo de la respuesta.
