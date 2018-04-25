@@ -62,7 +62,10 @@ public class UserAgentController {
     }
 
 
-
+    /**
+     *
+     * @return List with most used browsers
+     */
     private List<String> getMostUsedBrowsers(){
         List<UserAgent> userAgents = userAgentRepository.findAll();
 
@@ -73,7 +76,10 @@ public class UserAgentController {
 
         return getMostAppeared(userAgents,filter);
     }
-
+    /**
+     *
+     * @return List with most used OS
+     */
     private List<String> getMostUsedOS(){
         List<UserAgent> userAgents = userAgentRepository.findAll();
 
@@ -84,7 +90,10 @@ public class UserAgentController {
 
         return getMostAppeared(userAgents,filter);
     }
-
+    /**
+     *
+     * @return List with most used browsers and OS
+     */
     private List<String> getMostUsedOSAndBrowsers(){
         List<UserAgent> userAgents = userAgentRepository.findAll();
 
