@@ -42,7 +42,7 @@ public class UserAgentController {
      */
     @GetMapping(value = "/user-agents/{id}",produces = "application/json")
     public UserAgent getById(@PathVariable(value = "id") Long id){
-        return userAgentRepository.findById(id).get();
+        return userAgentRepository.findById(id).orElseThrow(()->new ResourceNotFounException("user-agent","id",id));
     }
 
     /**
@@ -61,7 +61,7 @@ public class UserAgentController {
         return json.toString();
     }
 
-    
+
 
     private List<String> getMostUsedBrowsers(){
         List<UserAgent> userAgents = userAgentRepository.findAll();
