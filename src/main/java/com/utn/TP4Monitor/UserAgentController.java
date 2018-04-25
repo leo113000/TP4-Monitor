@@ -17,6 +17,11 @@ public class UserAgentController {
 
     /**
      * This method persists the U.A. of the api's visitors
+     *
+     * THIS METHOD SHOULD BE IMPLEMENTED BY A POST REQUEST
+     *TO USE THE SAME URL PATH FOR BOTH POST AND GET
+     * FOR TESTING PURPOSE IT'S IMPLEMENTED WITH GET ALSO
+     *
      * @param ua
      * @return the actual user-agent
      */
@@ -25,7 +30,6 @@ public class UserAgentController {
         UserAgent userAgent = UserAgent.parseUserAgent(ua);
         return userAgentRepository.save(userAgent);
     }
-
     /**
      *
      * @return all the U.A.
@@ -44,7 +48,6 @@ public class UserAgentController {
     public UserAgent getById(@PathVariable(value = "id") Long id){
         return userAgentRepository.findById(id).orElseThrow(()->new ResourceNotFounException("user-agent","id",id));
     }
-
     /**
      *
      * @return the statistics of the monitor
@@ -60,8 +63,6 @@ public class UserAgentController {
 
         return json.toString();
     }
-
-
     /**
      *
      * @return List with most used browsers
